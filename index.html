@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expense Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <h2>Hello,</h2>
+    <p>Please enter your name below</p>
+    <div class="info">
+        <input type="text" id="usernameInput">
+        <button onclick="saveUsername()">Enter</button>
+    </div>
+  </div>
+</div>
+
+<div class="dashboard" id="dashboard">
+    <main class="nav">
+        <div class="userInfo">
+            <div>
+                <h1>Welcome, <span id="username">user</span>.</h1>
+            </div>
+            <div>
+                <p>Change Username</p>
+            </div>
+        </div>
+
+        <div class="buttons">
+            <div class="buttonDetails button1">Edit Expense <img src="assets/edit.svg" alt="edit"></div>
+            <div class="buttonDetails button2">Delete Expense <img src="assets/delete.svg" alt="delete"></div>
+            <div class="buttonDetails button3">Add Expense <img src="assets/add.svg" alt="add"></div>
+        </div>
+    </main>
+
+    <section>
+        <div class="grid-container">
+            <div class="grid-item"><div>
+                Total Balance</div>
+            
+                <div>P32,000.00</div>
+            </div>
+
+            <div class="grid-item"><div class="grid-itemTitle">
+                Total Balance</div>
+
+                <div class="grid-itemCost">P32,000.00</div>
+            </div>
+
+            <div class="grid-item"><div class="grid-itemTitle">
+                Total Balance</div>
+
+                <div class="grid-itemCost">P32,000.00</div>
+            </div> 
+        </div>
+    </section>
+
+    <section>
+        <div class="transactionHead">
+            <div class="transactionHeadTitle">
+                Transaction History
+            </div>
+
+            <div class="OverallButtonDetails OverallButton">Overall <img src="assets/arrow-down.svg" alt="arrow-down"></div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
