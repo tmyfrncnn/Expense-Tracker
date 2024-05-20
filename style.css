@@ -8,6 +8,8 @@ body {
     background-color: #F7F7FA;
 }
 
+/* Enter Username Modal */
+
 .modal {
     display: none;
     position: fixed;
@@ -19,43 +21,43 @@ body {
     background: linear-gradient(90deg, rgba(15,32,39,1) 0%, rgba(32,58,67,1) 43%, rgba(44,83,100,1) 100%);
 }
   
-  .modal-content {
+.modal-content {
     background-color: #fff;
     width: 300px;
     margin: auto;
     padding: 5px 50px 20px 50px;
     margin-top: 13%;
     border-radius: 5px;
-  }
+}
 
-  .modal-content h2 {
+.modal-content h2 {
     text-align: center;
     margin: auto;
     padding-top: 25px;
-  }
+}
 
-  .modal-content p {
+.modal-content p {
     text-align: center;
     padding: auto;
     margin: auto;
     padding-top: 4px;
     padding-bottom: 20px;
-  }
+}
   
-  input {
+input {
     margin-bottom: 7px;
     border: 1px solid #E1E0E6;
     border-radius: 3px;
     height: 25px;
     padding-left: 5px;
-  }
+}
 
-  input:focus {
+input:focus {
     border: 1px solid #E1E0E6;
     outline: none;
-  }
+}
 
-  button {
+button {
     background-color: #2B5161;
     outline: none;
     cursor: pointer;
@@ -65,19 +67,20 @@ body {
     color: white;
     font-weight: 400;
 
-  }
+}
 
-  .dashboard {
+.dashboard {
     display: none;
-  }
+}
 
-  .info {
+.info {
     display: flex;
     flex-direction: column;
     margin-top: 8px;
-  }
+}
 
   /* Dashboard Main */
+
 body {
     margin: auto;
     width: 90%;
@@ -113,7 +116,7 @@ body {
 }
 
 .buttonDetails, .OverallButtonDetails {
-    background: antiquewhite;
+
     display: flex;
     align-items: center;
     padding-top: 8px;
@@ -124,6 +127,37 @@ body {
     margin-right: 10px;
     font-size: 13px;
 }
+
+/* default button - dashboard empty */
+
+/* .button1 {
+    border-style: solid;
+    border-width: 2px;
+    background-color: #F7F7FA;
+    border-color: #9FACC6;
+    font-weight: 600;
+    color: #9FACC6;
+}
+
+.button2 {
+    border-style: solid;
+    border-width: 2px;
+    background-color: #F7F7FA;
+    border-color: #C69F9F;
+    font-weight: 600;
+    color: #C69F9F;
+}
+
+.button3 {
+    border-style: solid;
+    border-width: 2px;
+    background-color: #F7F7FA;
+    border-color: #8EA88A;
+    font-weight: 600;
+    color: #8EA88A;
+} */
+
+/* enabled buttons - dahsboard not empty */
 
 .button1 {
     border-style: solid;
@@ -166,19 +200,35 @@ body {
     color: #407D36;
 }
 
-.button3:hover{
+.button3:hover {
     background-color: #A5DD9B;
     font-weight: 600;
     color: #407D36;
     border-color: #A5DD9B;
 }
 
-.buttons {
-    display: flex;
+
+.button4 {
+    border-style: solid;
+    border-width: 2px;
+    background-color: #F7F7FA;
+    border-color: #dc7554;
+    font-weight: 600;
+    color: #dc7554;
 }
 
+.button4:hover {
+    background-color: #F8DFD7;
+    font-weight: 600;
+    color: #DC7554;
+    border-color: #F8DFD7;
+}
 .buttons:hover {
     cursor: pointer;
+}
+
+.buttons {
+    display: flex;
 }
 
 .buttons img {
@@ -187,6 +237,7 @@ body {
 }
 
 /* Dashboard Grid Total Expense */
+
 .grid-container {
     display: grid;
     grid-template-columns: 45% 27% 27%;
@@ -281,6 +332,15 @@ body {
     cursor: pointer;
 }
 
+option {
+    border-style: solid;
+    border-width: 2px;
+    background-color: #D2E0FB   ;
+    font-weight: 600;
+    color: #3F62A6;
+    margin-top: 20px;
+}
+
 /* table */
 
 table {
@@ -290,17 +350,129 @@ table {
 }
   
 td, th {
-    border-top: 1px solid #dddddd;
+    border-top: 1px solid #C8C7CD;
     text-align: left;
     padding: 20px;
 }
 
 th {
-    border-top: 2px solid #dddddd;
-    border-bottom: 2px solid #dddddd;
+    border-top: 2px solid #C8C7CD;
+    border-bottom: 2px solid #C8C7CD;
     font-size: 15px;
 }
 
 td {
     padding-top: 45px;
+}
+
+/* Add Expense Modal */
+
+#hidden {
+    display: none;
+    position: fixed;
+}
+
+.addExpense__modal-content {
+    background-color: #fff;
+    width: 300px;
+    margin: auto;
+    padding: 5px 50px 20px 50px;
+    margin-top: 13%;
+    border-radius: 5px;
+}
+
+.expense {
+    display: flex;
+    justify-content: space-between;
+}
+
+.addExpense__modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(13, 13, 13, 0.6);
+    backdrop-filter: blur(1px);
+}
+
+.addExpense__modal h2 {
+    text-align: left;
+    margin: auto;
+    padding-top: 25px;
+    font-size: 18px;
+}
+
+.expense input {
+    margin-bottom: 7px;
+    border: 1px solid #E1E0E6;
+    border-radius: 3px;
+    height: 25px;
+    padding-left: 5px;
+}
+
+.expense input:focus {
+    border: 1px solid #E1E0E6;
+    outline: none;
+}
+
+.expenseInfo button {
+    background-color: #2B5161;
+    outline: none;
+    cursor: pointer;
+    border: 1px solid #2B5161;
+    height: 35px;
+    border-radius: 3px;
+    color: white;
+    font-weight: 400;
+    margin-top: 10px;
+}
+
+.expenseInfo {
+    display: flex;
+    flex-direction: column;
+    margin-top: 8px;
+}
+
+.expense::placeholder {
+    font-style: italic;
+    color: #D6D6DB;
+    font-size: 12px;
+}
+
+.expenseTitle input:focus::placeholder {
+    color: transparent;
+}
+
+.expenseCost input:focus::placeholder {
+    color: transparent;
+}
+
+.expense p {
+    margin: auto;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.expenseInfo .enter {
+    background-color: #407D36;
+    border: none;
+}
+
+.expenseInfo .enter:hover {
+    background-color: #A5DD9B;
+}
+
+.expenseInfo .cancel {
+    background-color: #8F2424;
+    border: none;
+}
+
+.expenseInfo .cancel:hover {
+    background-color: #FF8080;
+}
+
+
+.text-warning {
+    color: #FF8080;
 }

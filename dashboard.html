@@ -17,10 +17,25 @@
             </div>
         </div>
 
+<!-- default button - dahsboard empty -->
+
+<!-- 
         <div class="buttons">
-            <div class="buttonDetails button1">Edit Expense <img src="assets/edit.svg" alt="edit"></div>
-            <div class="buttonDetails button2">Delete Expense <img src="assets/delete.svg" alt="delete"></div>
-            <div class="buttonDetails button3">Add Expense <img src="assets/add.svg" alt="add"></div>
+            <div class="buttonDetails button1">Edit Expense <img src="assets/edit - disable.svg" alt="edit"></div>
+            <div class="buttonDetails button2">Delete Expense <img src="assets//delete - disable.svg" alt="delete"></div>
+            <div class="buttonDetails button3">Add Expense <img src="assets/add - disable.svg" alt="add"></div>
+            <div class="buttonDetails button3">Add Expense <img src="assets/income - disable.svg" alt="add"></div>
+        </div> -->
+
+<!-- enabled buttons - dahsboard not empty -->
+
+        <div class="buttons">
+            <button class="buttonDetails button1">Edit Expense <img src="assets/edit.svg" alt="edit"></button>
+            <button class="buttonDetails button2">Delete Expense <img src="assets/delete.svg" alt="delete"></button>
+
+            <button class="buttonDetails button3" id="toogleAddExpense"> Add Expense <img src="assets/add.svg" alt="add"></button>
+
+            <button class="buttonDetails button4">Add Income <img src="assets/income.svg" alt="add"></button>
         </div>
     </main>
 
@@ -29,19 +44,19 @@
             <div class="grid-item"><div>
                 Total Balance</div>
             
-                <div>P32,000.00</div>
+                <div>0.00</div>
             </div>
 
             <div class="grid-item"><div class="grid-itemTitle">
-                Total Balance</div>
+                Total Income</div>
 
-                <div class="grid-itemCost">P32,000.00</div>
+                <div class="grid-itemCost">0.00</div>
             </div>
 
             <div class="grid-item"><div class="grid-itemTitle">
-                Total Balance</div>
+                Total Expense</div>
 
-                <div class="grid-itemCost">P32,000.00</div>
+                <div class="grid-itemCost">0.00</div>
             </div> 
         </div>
     </section>
@@ -107,85 +122,34 @@
                 </table>
             </div>
     </section>
-    <!-- <section>
-        <div class="table">
-            <div>
-                <div class="date">
-                    <ul>
-                        <li><b>Date</b></li>
-                    </ul>
-                    <ul>
-                        <li>April 23, 2024</li>
-                    </ul>
-                    <ul>
-                        <li>April 28, 2024</li>
-                    </ul>
-                    <ul>
-                        <li>April 30, 2024</li>
-                    </ul>
-                    <ul>
-                        <li>May 05, 2024</li>
-                    </ul>
-                </div>
-            </div>
-        
-            <div>
-                <div class="Expense">
-                    <ul>
-                        <li><b>Expense</b></li>
-                    </ul>
-                    <ul>
-                        <li>VECO</li>
-                    </ul>
-                    <ul>
-                        <li>Grocery</li>
-                    </ul>
-                    <ul>
-                        <li>Udon</li>
-                    </ul>
-                    <ul>
-                        <li>The Sims 4</li>
-                    </ul>
-                </div>
-            
-                <div class="Category">
-                    <ul>
-                        <li><b>Category</b></li>
-                    </ul>
-                    <ul>
-                        <li>Bills</li>
-                    </ul>
-                    <ul>
-                        <li>Consumables</li>
-                    </ul>
-                    <ul>
-                        <li>Food/Drinks</li>
-                    </ul>
-                    <ul>
-                        <li>Games</li>
-                    </ul>
-                </div>
 
-                <div class="Cost">
-                    <ul>
-                        <li><b>Cost</b></li>
-                    </ul>
-                    <ul>
-                        <li>2,000.00</li>
-                    </ul>
-                    <ul>
-                        <li>800.00</li>
-                    </ul>
-                    <ul>
-                        <li>300.00</li>
-                    </ul>
-                    <ul>
-                        <li>1,200.00</li>
-                    </ul>
+<!-- Add Expense Modal -->
+    <section>
+        <div class="addExpense__modal" id="hidden">
+            <div class="addExpense__modal-content">
+              <h2>Add Expense</h2>
+
+                <div class="expenseInfo">
+                    <div class="expense">
+                        <div class="expenseTitle">
+                            <p>Title<span class="text-warning">*</span></p>
+                            <input type="text" placeholder="Enter Expense Title" id="">
+                        </div>
+
+                        <div class="expenseCost">
+                            <p>Cost<span class="text-warning">*</span></p>
+                            <input type="text" placeholder="Insert Cost" id="">
+                        </div>
+                    </div>
+                        
+                    <button class="enter">Enter</button>
+
+                    <button class="cancel">Cancel</button>
                 </div>
             </div>
         </div>
-    </section> -->
-</div>
+    </section>
+
+<script src="script.js"></script>
 </body>
 </html>

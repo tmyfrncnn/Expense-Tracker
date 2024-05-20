@@ -30,10 +30,23 @@
             </div>
         </div>
 
+<!-- default button - dahsboard empty -->
+
+<!-- 
+        <div class="buttons">
+            <div class="buttonDetails button1">Edit Expense <img src="assets/edit - disable.svg" alt="edit"></div>
+            <div class="buttonDetails button2">Delete Expense <img src="assets//delete - disable.svg" alt="delete"></div>
+            <div class="buttonDetails button3">Add Expense <img src="assets/add - disable.svg" alt="add"></div>
+            <div class="buttonDetails button3">Add Expense <img src="assets/income - disable.svg" alt="add"></div>
+        </div> -->
+
+<!-- enabled buttons - dahsboard not empty -->
+
         <div class="buttons">
             <div class="buttonDetails button1">Edit Expense <img src="assets/edit.svg" alt="edit"></div>
             <div class="buttonDetails button2">Delete Expense <img src="assets/delete.svg" alt="delete"></div>
-            <div class="buttonDetails button3">Add Expense <img src="assets/add.svg" alt="add"></div>
+            <div class="buttonDetails button3" id="toogleAddExpense">Add Expense <img src="assets/add.svg" alt="add"></div>
+            <div class="buttonDetails button4">Add Income <img src="assets/income.svg" alt="add"></div>
         </div>
     </main>
 
@@ -42,35 +55,113 @@
             <div class="grid-item"><div>
                 Total Balance</div>
             
-                <div>P32,000.00</div>
+                <div>0.00</div>
             </div>
 
             <div class="grid-item"><div class="grid-itemTitle">
-                Total Balance</div>
+                Total Income</div>
 
-                <div class="grid-itemCost">P32,000.00</div>
+                <div class="grid-itemCost">0.00</div>
             </div>
 
             <div class="grid-item"><div class="grid-itemTitle">
-                Total Balance</div>
+                Total Expense</div>
 
-                <div class="grid-itemCost">P32,000.00</div>
+                <div class="grid-itemCost">0.00</div>
             </div> 
         </div>
     </section>
 
-    <section>
-        <div class="transactionHead">
-            <div class="transactionHeadTitle">
-                Transaction History
+    <section class="transactionHead">
+        <div>
+            <div class="transactionHead__nav">
+                <div class="transactionHeadTitle">
+                    Transaction History
+                </div>
+    
+                <select class="selectButtonDetails selectButton">
+                    <option>All</option>
+                    <option>Category</option>
+                    <option>Date</option>
+                </select>
             </div>
 
-            <div class="OverallButtonDetails OverallButton">Overall <img src="assets/arrow-down.svg" alt="arrow-down"></div>
+            <div>
+                <table>
+                <tr>
+                    <th>Date</th>
+                    <th>Expense</th>
+                    <th>Category</th>
+                    <th>Cost</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                </table>
+            </div>
+    </section>
+
+<!-- Add Expense Modal -->
+
+    <section>
+        <div class="addExpense__modal hidden" id="addExpenseModal">
+            <div class="addExpense__modal-content">
+              <h2>Add Expense</h2>
+
+                <div class="expenseInfo">
+                    <div class="expense">
+                        <div class="expenseTitle">
+                            <p>Title<span class="text-warning">*</span></p>
+                            <input type="text" placeholder="Enter Expense Title" id="">
+                        </div>
+
+                        <div class="expenseCost">
+                            <p>Cost<span class="text-warning">*</span></p>
+                            <input type="text" placeholder="Insert Cost" id="">
+                        </div>
+                    </div>
+                        
+                    <button class="enter">Enter</button>
+
+                    <button class="cancel">Cancel</button>
+                </div>
             </div>
         </div>
     </section>
 </div>
-
 <script src="script.js"></script>
 </body>
 </html>

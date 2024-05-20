@@ -1,7 +1,11 @@
-// Get modal and dashboard elements
+// Modal and dashboard elements
 const modal = document.getElementById('modal');
 const dashboard = document.getElementById('dashboard');
 const usernameSpan = document.getElementById('username');
+
+// Add Modal Elements
+const toggleAddExpense = document.getElementById('toogleAddExpense');
+const addExpenseModal = document.getElementById('addExpenseModal');
 
 // Function to show modal
 function showModal() {
@@ -25,3 +29,25 @@ function saveUsername() {
 
 // Show modal when the page loads
 window.onload = showModal;
+
+// get modal, buttons that opens and closes the modal
+var modal = document.getElementById("hidden");
+var btn = document.getElementById("toogleAddExpense");
+var close = document.getElementsByClassName("cancel");
+
+// modal opens when user clicks the button
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// modal closes when user clicks the "cancel" button
+close.onclick = function () {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
