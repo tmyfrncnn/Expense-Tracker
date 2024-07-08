@@ -370,6 +370,7 @@ td {
 /* Add Expense Modal */
 
 .addExpense__modal {
+    display: flex;
     top: 0;
     left: 0;
     width: 100%;
