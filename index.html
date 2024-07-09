@@ -10,22 +10,11 @@
 
 <body>
 
-    <div id="addIncome">
-        <label for="">income</label>
-        <input type="text" id="toBeAddedIncome">
+    <div class="AddIncomeModal" id="AddIncomeModal">
+        <input type="text" id="addIncome">
         <button id="buttonAddIncome">add</button>
-    </div>
 
-    <!-- <div class="modal" id="modal">
-  <div class="modal-content">
-    <h2>Hello,</h2>
-    <p>Please enter your name below</p>
-    <div class="info">
-        <input type="text" id="usernameInput">
-        <button onclick="saveUsername()">Enter</button>
     </div>
-  </div>
-</div> -->
 
     <div class="dashboard" id="dashboard" style="display: block !important;">
         <main class="nav">
@@ -105,7 +94,7 @@
         </section>
 
         <!-- Add Expense Modal -->
-         
+
         <section>
             <div class="AddExpenseModal" id="addExpenseModal">
                 <div class="AddExpenseModalContent">
@@ -123,6 +112,30 @@
                         </div>
                         <button class="enter">Enter</button>
                         <button class="cancel" id="cancelBtn">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Add Income Modal
+
+        <section>
+            <div class="AddIncomeModal" id="addIncomeModal">
+                <div class="AddIncomeModalContent">
+                    <h2>Add Expense</h2>
+                    <div class="incomeInfo">
+                        <div class="income">
+                            <div class="incomeTitle">
+                                <p>Title<span class="text-warning"></span></p>
+                                <input type="text" placeholder="Enter Income Title" id="">
+                            </div>
+                            <div class="incomeCost">
+                                <p>Cost<span class="text-warning"></span></p>
+                                <input type="text" placeholder="Insert Cost" id="">
+                            </div>
+                        </div>
+                        <button class="enter">Enter</button>
+                        <button class="cancel" id="IncomeCancelBtn">Cancel</button>
                     </div>
                 </div>
             </div>

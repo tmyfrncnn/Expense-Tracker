@@ -369,110 +369,6 @@ td {
 
 /* Add Expense Modal */
 
-/* .AddExpenseModal {
-    display: block;
-    width: 100%;
-    height: 100%;
-    background: rgba(13, 13, 13, 0.6);
-    backdrop-filter: blur(1px);
-}
-
-.AddExpenseModalContent {
-    background-color: #fff;
-    width: 300px;
-    margin: auto;
-    padding: 5px 50px 20px 50px;
-    margin-top: 13%;
-    border-radius: 5px;
-}
-
-.expense {
-    display: flex;
-    justify-content: space-between;
-}
-
-
-.addExpense__modal h2 {
-    text-align: left;
-    margin: auto;
-    padding-top: 25px;
-    font-size: 18px;
-}
-
-.expense input {
-    margin-bottom: 7px;
-    border: 1px solid #E1E0E6;
-    border-radius: 3px;
-    height: 25px;
-    padding-left: 5px;
-}
-
-.expense input:focus {
-    border: 1px solid #E1E0E6;
-    outline: none;
-}
-
-.expenseInfo button {
-    background-color: #2B5161;
-    outline: none;
-    cursor: pointer;
-    border: 1px solid #2B5161;
-    height: 35px;
-    border-radius: 3px;
-    color: white;
-    font-weight: 400;
-    margin-top: 10px;
-}
-
-.expenseInfo {
-    display: flex;
-    flex-direction: column;
-    margin-top: 8px;
-}
-
-.expense::placeholder {
-    font-style: italic;
-    color: #D6D6DB;
-    font-size: 12px;
-}
-
-.expenseTitle input:focus::placeholder {
-    color: transparent;
-}
-
-.expenseCost input:focus::placeholder {
-    color: transparent;
-}
-
-.expense p {
-    margin: auto;
-    font-size: 13px;
-    font-weight: 700;
-}
-
-.expenseInfo .enter {
-    background-color: #407D36;
-    border: none;
-}
-
-.expenseInfo .enter:hover {
-    background-color: #A5DD9B;
-}
-
-.expenseInfo .cancel {
-    background-color: #8F2424;
-    border: none;
-}
-
-.expenseInfo .cancel:hover {
-    background-color: #FF8080;
-}
-
-
-.text-warning {
-    color: #FF8080;
-} */
-
 .AddExpenseModal {
     display: none;
     justify-content: center;
@@ -486,6 +382,7 @@ td {
     backdrop-filter: blur(5px);
     z-index: 1000; /* Ensure the modal is on top */
 }
+
 
 .AddExpenseModalContent {
     background-color: #fff;
@@ -556,7 +453,7 @@ td {
     color: transparent;
 }
 
-.expense p {
+.expense .income p {
     margin: auto;
     font-size: 13px;
     font-weight: 700;
@@ -571,19 +468,117 @@ td {
     background-color: #A5DD9B;
 }
 
-.expenseInfo .cancel {
-    background-color: #8F2424;
-    border: none;
-}
+
 
 .expenseInfo .cancel:hover {
     background-color: #FF8080;
 }
 
+
 .text-warning {
     color: #FF8080;
 }
 
-#addIncome {
+/* Add Income Modal */
+
+/* .AddIncomeModal {
     display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(13, 13, 13, 0.6);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
 }
+
+.AddIncomeModalContent {
+    background-color: #fff;
+    width: 300px;
+    padding: 5px 50px 20px 50px;
+    border-radius: 5px;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.income {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.AddIncomeModalContent h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    padding-top: 25px;
+    font-size: 18px;
+}
+
+.income input {
+    margin-bottom: 7px;
+    border: 1px solid #E1E0E6;
+    border-radius: 3px;
+    height: 25px;
+    padding-left: 5px;
+    width: 100%;
+}
+
+.income input:focus {
+    border: 1px solid #E1E0E6;
+    outline: none;
+}
+
+.incomeInfo button {
+    background-color: #2B5161;
+    outline: none;
+    cursor: pointer;
+    border: 1px solid #2B5161;
+    height: 35px;
+    border-radius: 3px;
+    color: white;
+    font-weight: 400;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.incomeInfo {
+    display: flex;
+    flex-direction: column;
+    margin-top: 8px;
+    width: 100%;
+}
+
+
+.income::placeholder {
+    font-style: italic;
+    color: #D6D6DB;
+    font-size: 12px;
+}
+
+.incomeTitle input:focus::placeholder,
+.incomeCost input:focus::placeholder {
+    color: transparent;
+}
+
+.incomeInfo .enter {
+    background-color: #407D36;
+    border: none;
+}
+
+.incomeInfo .enter:hover {
+    background-color: #A5DD9B;
+}
+
+.incomeInfo .cancel {
+    background-color: #8F2424;
+    border: none;
+}
+
+.incomeInfo .cancel:hover {
+    background-color: #FF8080;
+} */
