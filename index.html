@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Expense Tracker</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<div>
-    <label for="">income</label>
-    <input type="text" id="toBeAddedIncome">
-    <button id="buttonAddIncome">add</button>
-</div>
+    <div id="addIncome">
+        <label for="">income</label>
+        <input type="text" id="toBeAddedIncome">
+        <button id="buttonAddIncome">add</button>
+    </div>
 
-<!-- <div class="modal" id="modal">
+    <!-- <div class="modal" id="modal">
   <div class="modal-content">
     <h2>Hello,</h2>
     <p>Please enter your name below</p>
@@ -25,105 +27,108 @@
   </div>
 </div> -->
 
-<div class="dashboard" id="dashboard" style="display: block !important;">
-    <main class="nav">
-        <div class="userInfo">
-            <div>
-                <h1>Welcome, <span id="username">user</span>.</h1>
-            </div>
-            <div>
-                <p>Change Username</p>
-            </div>
-        </div>
-
-        <div class="buttons">
-            <div class="buttonDetails button1 disabled-btn" id="toggleEditExpense">Edit Expense <img src="assets/edit.svg" alt="edit"></div>
-
-            <div class="buttonDetails button2 disabled-btn"  id="toggleDeleteExpense">Delete Expense <img src="assets/delete.svg" alt="delete"></div>
-
-            <div class="buttonDetails button3 disabled-btn" id="toggleAddExpense">Add Expense <img src="assets/add.svg" alt="add"></div>
-
-            <div class="buttonDetails button4 disabled-btn" id="toggleAddIncome">Add Income <img src="assets/income.svg" alt="add"></div>
-        </div>
-    </main>
-
-    <section>
-        <div class="grid-container">
-            <div class="grid-item"><div>
-                Total Balance</div>
-            
-                <div id="totalBalance">0.00</div>
+    <div class="dashboard" id="dashboard" style="display: block !important;">
+        <main class="nav">
+            <div class="userInfo">
+                <div>
+                    <h1>Welcome, <span id="username">user</span>.</h1>
+                </div>
+                <div>
+                    <p>Change Username</p>
+                </div>
             </div>
 
-            <div class="grid-item"><div class="grid-itemTitle">
-                Total Income</div>
+            <div class="buttons">
+                <div class="buttonDetails button1 disabled-btn" id="toggleEditExpense">Edit Expense <img
+                        src="assets/edit.svg" alt="edit"></div>
 
-                <div class="grid-itemCost" id="totalIncome">0.00</div>
+                <div class="buttonDetails button2 disabled-btn" id="toggleDeleteExpense">Delete Expense <img
+                        src="assets/delete.svg" alt="delete"></div>
+
+                <div class="buttonDetails button3 disabled-btn" id="toggleAddExpense">Add Expense <img
+                        src="assets/add.svg" alt="add"></div>
+
+                <div class="buttonDetails button4 disabled-btn" id="toggleAddIncome">Add Income <img
+                        src="assets/income.svg" alt="add"></div>
             </div>
+        </main>
 
-            <div class="grid-item">
-                <div class="grid-itemTitle">
-                    Total Expense
+        <section>
+            <div class="grid-container">
+                <div class="grid-item">
+                    <div>
+                        Total Balance</div>
+
+                    <div id="totalBalance">0.00</div>
                 </div>
 
-                <div class="grid-itemCost">0.00</div>
-            </div> 
-        </div>
-    </section>
+                <div class="grid-item">
+                    <div class="grid-itemTitle">
+                        Total Income</div>
 
-    <section class="transactionHead">
-        <div>
-            <div class="transactionHead__nav">
-                <div class="transactionHeadTitle">
-                    Transaction History
+                    <div class="grid-itemCost" id="totalIncome">0.00</div>
                 </div>
-    
-                <select class="selectButtonDetails selectButton">
-                    <option>All</option>
-                    <option>Category</option>
-                    <option>Date</option>
-                </select>
-            </div>
 
-            <div>
-                <table>
-                <tr>
-                    <th>Date</th>
-                    <th>Category</th>
-                    <th>Cost</th>
-                </tr>
-                </table>
-            </div>
-    </section>
-
-<!-- Add Expense Modal -->
-
-    <section>
-        <div class="addExpense__modal" id="addExpenseModal">
-            <div class="addExpense__modal-content">
-              <h2>Add Expense</h2>
-
-                <div class="expenseInfo">
-                    <div class="expense">
-                        <div class="expenseTitle">
-                            <p>Title<span class="text-warning">*</span></p>
-                            <input type="text" placeholder="Enter Expense Title" id="">
-                        </div>
-
-                        <div class="expenseCost">
-                            <p>Cost<span class="text-warning">*</span></p>
-                            <input type="text" placeholder="Insert Cost" id="">
-                        </div>
+                <div class="grid-item">
+                    <div class="grid-itemTitle">
+                        Total Expense
                     </div>
-                        
-                    <button class="enter">Enter</button>
 
-                    <button class="cancel" id="cancelBtn">Cancel</button>
+                    <div class="grid-itemCost">0.00</div>
                 </div>
             </div>
-        </div>
-    </section>
-</div>
-<script src="script.js"></script>
+        </section>
+
+        <section class="transactionHead">
+            <div>
+                <div class="transactionHead__nav">
+                    <div class="transactionHeadTitle">
+                        Transaction History
+                    </div>
+
+                    <select class="selectButtonDetails selectButton">
+                        <option>All</option>
+                        <option>Category</option>
+                        <option>Date</option>
+                    </select>
+                </div>
+
+                <div>
+                    <table>
+                        <tr>
+                            <th>Date</th>
+                            <th>Category</th>
+                            <th>Cost</th>
+                        </tr>
+                    </table>
+                </div>
+        </section>
+
+        <!-- Add Expense Modal -->
+         
+        <section>
+            <div class="AddExpenseModal" id="addExpenseModal">
+                <div class="AddExpenseModalContent">
+                    <h2>Add Expense</h2>
+                    <div class="expenseInfo">
+                        <div class="expense">
+                            <div class="expenseTitle">
+                                <p>Title<span class="text-warning"></span></p>
+                                <input type="text" placeholder="Enter Expense Title" id="">
+                            </div>
+                            <div class="expenseCost">
+                                <p>Cost<span class="text-warning"></span></p>
+                                <input type="text" placeholder="Insert Cost" id="">
+                            </div>
+                        </div>
+                        <button class="enter">Enter</button>
+                        <button class="cancel" id="cancelBtn">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="script.js"></script>
 </body>
+
 </html>

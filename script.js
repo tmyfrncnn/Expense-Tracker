@@ -1,37 +1,3 @@
-// balance n stuff
-
-// Add an `addExpense` function
-const wallet = {
-    income: 0,
-    expense: 0,
-    addIncome: function(addedIncome) {
-      this.income = this.income + addedIncome
-      this.displayInDOM()
-    },
-    getBalance: function() {
-      return this.income - this.expense
-    },
-  
-    // Add expense to DOM
-    displayInDOM: function() {
-      document.getElementById('totalIncome').innerText = this.income
-      document.getElementById('totalBalance').innerText = this.getBalance()
-      if(this.income === 0 || this.income < 0) {
-        
-        // disable
-        document.getElementById('toggleEditExpense').classList.add('disabled-btn')
-        document.getElementById('toggleDeleteExpense').classList.add('disabled-btn')
-        document.getElementById('toggleAddExpense').classList.add('disabled-btn')
-      } else {
-        
-        // enable
-        document.getElementById('toggleEditExpense').classList.remove('disabled-btn')
-        document.getElementById('toggleDeleteExpense').classList.remove('disabled-btn')
-        document.getElementById('toggleAddExpense').classList.remove('disabled-btn')
-      }
-    }
-  }
-  
   // DUMMY DATA
   let transactionHistory = [
     {
@@ -41,7 +7,7 @@ const wallet = {
     },
     {
       date: new Date(),
-      category: 'korente',
+      category: 'bill',
       cost: 5000,
     },
     {
@@ -56,7 +22,7 @@ const wallet = {
     },
   ]
   
-  transactionHistory.forEach(function(item) {
+  transactionHistory.forEach (function(item) {
     document.querySelector('table').innerHTML += `
       <tr>
         <td>${item.date.toLocaleString()}</td>
@@ -65,26 +31,19 @@ const wallet = {
       </tr>
     `
   })
-  // const toBeAddedIncome = document.getElementById('toBeAddedIncome')
-  // const buttonAddIncome = document.getElementById('buttonAddIncome')
+
+  const toBeAddedIncome = document.getElementById('toBeAddedIncome')
+  const buttonAddIncome = document.getElementById('buttonAddIncome')
   
-  // buttonAddIncome.onclick = function() {
-  //   wallet.addIncome(parseInt(toBeAddedIncome.value))
-  // }
+  buttonAddIncome.onclick = function() {
+    wallet.addIncome(parseInt(toBeAddedIncome.value))
+  }
   
   // Modal and dashboard elements
   const modal = document.getElementById('modal');
   const dashboard = document.getElementById('dashboard');
   const usernameSpan = document.getElementById('username');
   
-  // Add Modal Elements
-  const toggleAddExpense = document.getElementById('toggleAddExpense');
-  const addExpenseModal = document.getElementById('addExpenseModal');
-  
-  // Function to show modal
-  function showModal() {
-    modal.style.display = 'block';
-  }
   
   // Function to save username
   function saveUsername() {
@@ -101,17 +60,31 @@ const wallet = {
     }
   }
   
-  var addExpense__modal_Content = document.getElementsByClassName ("addExpense__modal-content")
-  
-  var buttonAddIncome = document.getElementById("toggleAddExpense");
-  
-  var cancelBtn = document.getElementById("cancelBtn");
-  
-  buttonAddIncome.onclick = function () {
-    modal.style.display = "block";
-  }
-  
-  cancelBtn.onclick = function (){
-    modal.style.display = "none";
-  }
-  
+  document.addEventListener("DOMContentLoaded", function() {
+    var addIncome = document.getElementById("addIncome");
+    var toggleAddIncome = document.getElementById("toggleAddIncome");
+
+    // VV if nakakita ang function nga naka strictly block ang display daan, the function hides it (after running script (by clicking the button)) dayn using display none. but if ang display kay none, the function shows it again using block 
+
+    toggleAddIncome.onclick = function() {
+        if (addIncome.style.display === "block") {
+            addIncome.style.display = "none";
+        } else {
+            addIncome.style.display = "block";
+        }
+    }
+});
+
+// for add expense ((again))
+
+var addExpenseModal = document.getElementById("addExpenseModal");
+var toggleAddExpense = document.getElementById("toggleAddExpense");
+var cancelBtn = document.getElementById("cancelBtn");
+
+toggleAddExpense.onclick = function() {
+    addExpenseModal.style.display = "flex";
+};
+
+cancelBtn.onclick = function() {
+    addExpenseModal.style.display = "none";
+};
