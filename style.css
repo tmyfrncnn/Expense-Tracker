@@ -468,7 +468,10 @@ td {
     background-color: #A5DD9B;
 }
 
-
+.expenseInfo .cancel {
+    background-color: #8F2424;
+    border: none;
+}
 
 .expenseInfo .cancel:hover {
     background-color: #FF8080;
@@ -481,7 +484,7 @@ td {
 
 /* Add Income Modal */
 
-/* .AddIncomeModal {
+.AddIncomeModal {
     display: none;
     justify-content: center;
     align-items: center;
@@ -581,4 +584,4 @@ td {
 
 .incomeInfo .cancel:hover {
     background-color: #FF8080;
-} */
+}

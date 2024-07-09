@@ -34,10 +34,6 @@
   const toBeAddedIncome = document.getElementById('toBeAddedIncome')
   const buttonAddIncome = document.getElementById('buttonAddIncome')
 
-  buttonAddIncome.onclick = function () {
-    wallet.addIncome(parseInt(toBeAddedIncome.value))
-  }
-
   // Modal and dashboard elements
   const modal = document.getElementById('modal');
   const dashboard = document.getElementById('dashboard');
@@ -90,14 +86,14 @@
 
   // for add income (trial1)
 
-  // var addIncomeModal = document.getElementById("addIncomeModal");
-  // var toggleAddIncome = document.getElementById("toggleAddIncome");
-  // var IncomeCancelBtn = document.getElementById("IncomeCancelBtn");
+  var addIncomeModal = document.getElementById("addIncomeModal");
+  var toggleAddIncome = document.getElementById("toggleAddIncome");
+  var IncomeCancelBtn = document.getElementById("IncomeCancelBtn");
 
-  // toggleAddIncome.onclick = function () {
-  //   addIncomeModal.style.display = "flex";
-  // };
+  toggleAddIncome.onclick = function () {
+    addIncomeModal.style.display = "flex";
+  };
 
-  // IncomeCancelBtnancelBtn.onclick = function () {
-  //   addIncomeModal.style.display = "none";
-  // };
+  IncomeCancelBtn.onclick = function () {
+    addIncomeModal.style.display = "none";
+  };
