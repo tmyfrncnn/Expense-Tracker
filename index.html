@@ -61,29 +61,36 @@
             </div>
         </section>
 
+        <!-- Expense Table -->
+
         <section class="transactionHead">
             <div>
                 <div class="transactionHead__nav">
                     <div class="transactionHeadTitle">
                         Transaction History
                     </div>
-
                     <select class="selectButtonDetails selectButton">
                         <option>All</option>
-                        <option>Category</option>
+                        <option>Title</option>
                         <option>Date</option>
                     </select>
                 </div>
 
                 <div>
-                    <table>
-                        <tr>
-                            <th>Date</th>
-                            <th>Category</th>
-                            <th>Cost</th>
-                        </tr>
+                    <table id="transactionTable">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Title</th>
+                                <th>Cost</th>
+                            </tr>
+                        </thead>
+                        <tbody id="transactionTableBody">
+
+                        </tbody>
                     </table>
                 </div>
+            </div>
         </section>
 
         <!-- Add Expense Modal -->
@@ -96,15 +103,15 @@
                         <div class="expense">
                             <div class="expenseTitle">
                                 <p>Title<span class="text-warning"></span></p>
-                                <input type="text" placeholder="Enter Expense Title" id="">
+                                <input type="text" placeholder="Enter Expense Title" id="expenseTitleField">
                             </div>
                             <div class="expenseCost">
                                 <p>Cost<span class="text-warning"></span></p>
-                                <input type="text" placeholder="Insert Cost" id="">
+                                <input type="text" placeholder="Insert Cost" id="expenseCostField">
                             </div>
                         </div>
-                        <button class="enter">Enter</button>
-                        <button class="cancel" id="cancelBtn">Cancel</button>
+                        <button class="enter" id="ExpenseEnterBtn">Enter</button>
+                        <button class="cancel" id="ExpenseCancelBtn">Cancel</button>
                     </div>
                 </div>
             </div>
@@ -115,7 +122,7 @@
         <section>
             <div class="AddIncomeModal" id="addIncomeModal">
                 <div class="AddIncomeModalContent">
-                    <h2>Add Income Cost</h2>
+                    <h2>Add Income</h2>
 
                     <div class="incomeInfo">
 
@@ -127,8 +134,7 @@
                         </div>
 
                         <div class="incomeBtn">
-                            <button class="enter"
-                            id="IncomeEnterBtn">Enter</button>
+                            <button class="enter" id="IncomeEnterBtn">Enter</button>
                             <button class="cancel" id="IncomeCancelBtn">Cancel</button>
                         </div>
                     </div>
