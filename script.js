@@ -52,6 +52,13 @@
   var toggleAddExpense = document.getElementById("toggleAddExpense");
   var ExpenseCancelBtn = document.getElementById("ExpenseCancelBtn");
 
+
+  // added variables
+  var expenseTitleField = document.getElementById ("expenseTitleField");
+  var expenseCostField = document.getElementById ("expenseCostField");
+  var ExpenseEnterBtn = document.getElementById ("ExpenseEnterBtn");
+  var transactionTableBody = document.getElementById ("transactionTableBody");
+
   toggleAddExpense.onclick = function () {
     addExpenseModal.style.display = "flex";
   };
@@ -59,6 +66,11 @@
   ExpenseCancelBtn.onclick = function () {
     addExpenseModal.style.display = "none";
   };
+
+  // new conditions
+ExpenseEnterBtn.onlick = function () {
+  
+}
 
   // for add income (trial1) update: not trial anymore bec it wokred hehe UwU
 
@@ -121,5 +133,3 @@
   // ang value. and that mag increase na dayn ang number ana
   // because of this code:
   // totalIncome.textContent = (currentIncome + cost)
-
-  // 'Add Expense'
