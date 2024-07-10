@@ -84,7 +84,7 @@
     addExpenseModal.style.display = "none";
   };
 
-  // for add income (trial1)
+  // for add income (trial1) update: not trial anymore bec it wokred hehe UwU
 
   var addIncomeModal = document.getElementById("addIncomeModal");
   var toggleAddIncome = document.getElementById("toggleAddIncome");

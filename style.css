@@ -501,7 +501,7 @@ td {
 .AddIncomeModalContent {
     background-color: #fff;
     width: 300px;
-    padding: 5px 50px 20px 50px;
+    padding: 0px 25px 20px 25px;
     border-radius: 5px;
     box-shadow: 0px 5px 15px rgba(0,0,0,0.3);
     display: flex;
@@ -518,42 +518,32 @@ td {
 .AddIncomeModalContent h2 {
     text-align: center;
     margin-bottom: 10px;
-    padding-top: 25px;
+    padding-top: 10px;
     font-size: 18px;
 }
 
-.income input {
-    margin-bottom: 7px;
-    border: 1px solid #E1E0E6;
+.incomeCost p {
+    margin: 0;
+    margin-bottom: 5px;
+    font-size: 12px;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.incomeCost input {
+    margin-bottom: 14px;
+    border: 1px solid rgb(225, 224, 230);
     border-radius: 3px;
     height: 25px;
     padding-left: 5px;
-    width: 100%;
-}
-
-.income input:focus {
-    border: 1px solid #E1E0E6;
-    outline: none;
-}
-
-.incomeInfo button {
-    background-color: #2B5161;
-    outline: none;
-    cursor: pointer;
-    border: 1px solid #2B5161;
-    height: 35px;
-    border-radius: 3px;
-    color: white;
-    font-weight: 400;
-    margin-top: 10px;
-    width: 100%;
+    width: 280px;
 }
 
 .incomeInfo {
-    display: flex;
-    flex-direction: column;
     margin-top: 8px;
     width: 100%;
+    margin: auto;
+    display: block;
 }
 
 
@@ -568,20 +558,31 @@ td {
     color: transparent;
 }
 
-.incomeInfo .enter {
-    background-color: #407D36;
-    border: none;
+.incomeBtn {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
 }
 
-.incomeInfo .enter:hover {
+.incomeBtn .enter {
+    background-color: #407D36;
+    border: none;
+    padding-left: 100px;
+    padding-right: 100px;
+    margin-bottom: 7px;
+}
+
+.incomeBtn .enter:hover {
     background-color: #A5DD9B;
 }
 
-.incomeInfo .cancel {
+.incomeBtn .cancel {
     background-color: #8F2424;
     border: none;
+    padding-left: 100px;
+    padding-right: 100px;
 }
 
-.incomeInfo .cancel:hover {
+.incomeBtn .cancel:hover {
     background-color: #FF8080;
 }
