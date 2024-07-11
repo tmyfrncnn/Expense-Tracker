@@ -56,7 +56,7 @@
                         Total Expense
                     </div>
 
-                    <div class="grid-itemCost">0.00</div>
+                    <div class="grid-itemCost" id="totalExpense">0.00</div>
                 </div>
             </div>
         </section>
@@ -69,18 +69,12 @@
                     <div class="transactionHeadTitle">
                         Transaction History
                     </div>
-                    <select class="selectButtonDetails selectButton">
-                        <option>All</option>
-                        <option>Title</option>
-                        <option>Date</option>
-                    </select>
                 </div>
 
                 <div>
                     <table id="transactionTable">
                         <thead>
                             <tr>
-                                <th>Date</th>
                                 <th>Title</th>
                                 <th>Cost</th>
                             </tr>
@@ -110,8 +104,8 @@
                                 <input type="text" placeholder="Insert Cost" id="expenseCostField">
                             </div>
                         </div>
-                        <button class="enter" id="ExpenseEnterBtn">Enter</button>
-                        <button class="cancel" id="ExpenseCancelBtn">Cancel</button>
+                        <button class="enter" id="expenseEnterBtn">Enter</button>
+                        <button class="cancel" id="expenseCancelBtn">Cancel</button>
                     </div>
                 </div>
             </div>

@@ -1,35 +1,35 @@
   // DUMMY DATA
-  let transactionHistory = [{
-      date: new Date(),
-      category: 'food',
-      cost: 10000,
-    },
-    {
-      date: new Date(),
-      category: 'bill',
-      cost: 5000,
-    },
-    {
-      date: new Date(),
-      category: 'water',
-      cost: 300,
-    },
-    {
-      date: new Date(),
-      category: 'pet stuff',
-      cost: 100000000,
-    },
-  ]
+  // let transactionHistory = [{
+  //     date: new Date(),
+  //     category: 'food',
+  //     cost: 10000,
+  //   },
+  //   {
+  //     date: new Date(),
+  //     category: 'bill',
+  //     cost: 5000,
+  //   },
+  //   {
+  //     date: new Date(),
+  //     category: 'water',
+  //     cost: 300,
+  //   },
+  //   {
+  //     date: new Date(),
+  //     category: 'pet stuff',
+  //     cost: 100000000,
+  //   },
+  // ]
 
-  transactionHistory.forEach(function (item) {
-    document.querySelector('table').innerHTML += `
-      <tr>
-        <td>${item.date.toLocaleString()}</td>
-        <td>${item.category}</td>
-        <td>${item.cost}</td>
-      </tr>
-    `
-  })
+  // transactionHistory.forEach(function (item) {
+  //   document.querySelector('table').innerHTML += `
+  //     <tr>
+  //       <td>${item.date.toLocaleString()}</td>
+  //       <td>${item.category}</td>
+  //       <td>${item.cost}</td>
+  //     </tr>
+  //   `
+  // })
 
   // document.addEventListener("DOMContentLoaded", function () {
   //   var addIncome = document.getElementById("addIncome");
@@ -50,27 +50,64 @@
 
   var addExpenseModal = document.getElementById("addExpenseModal");
   var toggleAddExpense = document.getElementById("toggleAddExpense");
-  var ExpenseCancelBtn = document.getElementById("ExpenseCancelBtn");
+  var expenseCancelBtn = document.getElementById("expenseCancelBtn");
 
 
   // added variables
-  var expenseTitleField = document.getElementById ("expenseTitleField");
-  var expenseCostField = document.getElementById ("expenseCostField");
-  var ExpenseEnterBtn = document.getElementById ("ExpenseEnterBtn");
-  var transactionTableBody = document.getElementById ("transactionTableBody");
+  var expenseTitleField = document.getElementById("expenseTitleField");
+  var expenseCostField = document.getElementById("expenseCostField");
+  var expenseEnterBtn = document.getElementById("expenseEnterBtn");
+  var transactionTableBody = document.getElementById("transactionTableBody");
+  var totalExpense = document.getElementById ("totalExpense");
 
   toggleAddExpense.onclick = function () {
     addExpenseModal.style.display = "flex";
   };
 
-  ExpenseCancelBtn.onclick = function () {
+  expenseCancelBtn.onclick = function () {
     addExpenseModal.style.display = "none";
   };
 
   // new conditions
-ExpenseEnterBtn.onlick = function () {
-  
-}
+
+  let tableData = []
+
+  expenseEnterBtn.onclick = function () {
+
+    var expenseTitle = expenseTitleField.value;
+    var expenseCost = expenseCostField.value;
+
+    var toBeInsertedData = {
+      title: expenseTitle,
+      cost: expenseCost,
+    };
+
+    let content = `
+      <tr>
+          <td>${toBeInsertedData.title}</td>
+          <td>${toBeInsertedData.cost}</td>
+      </tr>
+  `;
+
+    transactionTableBody.innerHTML += content;
+
+    var expense = parseFloat(expenseCostField.value);
+    if (!isNaN(expense) && expense > 0) {
+      var currentExpense = parseFloat(totalExpense.textContent);
+
+      totalExpense.textContent = (currentExpense + expense).toFixed(2);
+
+      addIncomeModal.style.display = "none";
+    } else {
+      alert("Don't");
+    }
+
+    addExpenseModal.style.display = "none";
+  };
+
+  // expenseEnterBtn.onclick = function () {
+    
+  // };
 
   // for add income (trial1) update: not trial anymore bec it wokred hehe UwU
 
