@@ -35,79 +35,65 @@
   //   var addIncome = document.getElementById("addIncome");
   //   var toggleAddIncome = document.getElementById("toggleAddIncome");
 
-  // VV if nakakita ang function nga naka strictly block ang display daan, the function hides it (after running script (by clicking the button)) dayn using display none. but if ang display kay none, the function shows it again using block 
-
-  //   toggleAddIncome.onclick = function () {
-  //     if (addIncome.style.display === "block") {
-  //       addIncome.style.display = "none";
-  //     } else {
-  //       addIncome.style.display = "block";
-  //     }
-  //   }
-  // });
-
   // for add expense ((again))
 
   var addExpenseModal = document.getElementById("addExpenseModal");
   var toggleAddExpense = document.getElementById("toggleAddExpense");
   var expenseCancelBtn = document.getElementById("expenseCancelBtn");
-
-
-  // added variables
+  
   var expenseTitleField = document.getElementById("expenseTitleField");
   var expenseCostField = document.getElementById("expenseCostField");
   var expenseEnterBtn = document.getElementById("expenseEnterBtn");
   var transactionTableBody = document.getElementById("transactionTableBody");
-  var totalExpense = document.getElementById ("totalExpense");
-
+  var totalExpense = document.getElementById("totalExpense");
+  var totalIncome = document.getElementById("totalIncome");
+  
   toggleAddExpense.onclick = function () {
     addExpenseModal.style.display = "flex";
   };
-
+  
   expenseCancelBtn.onclick = function () {
     addExpenseModal.style.display = "none";
   };
-
-  // new conditions
-
-  let tableData = []
-
+  
   expenseEnterBtn.onclick = function () {
-
+    var incomeValue = parseFloat(totalIncome.textContent);
+    if (isNaN(incomeValue) || incomeValue <= 0) {
+      alert('Fill income first before entering expense.');
+      return;
+    }
+  
     var expenseTitle = expenseTitleField.value;
-    var expenseCost = expenseCostField.value;
-
+    var expenseCost = parseFloat(expenseCostField.value);
+  
+    if (!expenseTitle || isNaN(expenseCost) || expenseCost <= 0) {
+      alert("Please enter a valid expense title and cost.");
+      return;
+    }
+  
     var toBeInsertedData = {
       title: expenseTitle,
-      cost: expenseCost,
+      cost: expenseCost.toFixed(2),
     };
-
+  
     let content = `
       <tr>
           <td>${toBeInsertedData.title}</td>
           <td>${toBeInsertedData.cost}</td>
       </tr>
-  `;
-
+    `;
+  
     transactionTableBody.innerHTML += content;
-
-    var expense = parseFloat(expenseCostField.value);
-    if (!isNaN(expense) && expense > 0) {
-      var currentExpense = parseFloat(totalExpense.textContent);
-
-      totalExpense.textContent = (currentExpense + expense).toFixed(2);
-
-      addIncomeModal.style.display = "none";
-    } else {
-      alert("Don't");
-    }
-
+  
+    var currentExpense = parseFloat(totalExpense.textContent);
+    totalExpense.textContent = (currentExpense + expenseCost).toFixed(2);
+  
+    expenseTitleField.value = '';
+    expenseCostField.value = '';
+  
     addExpenseModal.style.display = "none";
   };
-
-  // expenseEnterBtn.onclick = function () {
-    
-  // };
+  
 
   // for add income (trial1) update: not trial anymore bec it wokred hehe UwU
 
@@ -147,7 +133,7 @@
 
       addIncomeModal.style.display = "none";
     } else {
-      alert("有効なコストを入力してください。");
+      alert("Fill input in first");
     }
   };
 
