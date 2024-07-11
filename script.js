@@ -40,60 +40,56 @@
   var addExpenseModal = document.getElementById("addExpenseModal");
   var toggleAddExpense = document.getElementById("toggleAddExpense");
   var expenseCancelBtn = document.getElementById("expenseCancelBtn");
-  
+
   var expenseTitleField = document.getElementById("expenseTitleField");
   var expenseCostField = document.getElementById("expenseCostField");
   var expenseEnterBtn = document.getElementById("expenseEnterBtn");
   var transactionTableBody = document.getElementById("transactionTableBody");
   var totalExpense = document.getElementById("totalExpense");
   var totalIncome = document.getElementById("totalIncome");
-  
+
   toggleAddExpense.onclick = function () {
     addExpenseModal.style.display = "flex";
   };
-  
+
   expenseCancelBtn.onclick = function () {
     addExpenseModal.style.display = "none";
   };
-  
+
   expenseEnterBtn.onclick = function () {
     var incomeValue = parseFloat(totalIncome.textContent);
     if (isNaN(incomeValue) || incomeValue <= 0) {
       alert('Fill income first before entering expense.');
       return;
     }
-  
+
     var expenseTitle = expenseTitleField.value;
     var expenseCost = parseFloat(expenseCostField.value);
-  
-    if (!expenseTitle || isNaN(expenseCost) || expenseCost <= 0) {
-      alert("Please enter a valid expense title and cost.");
-      return;
-    }
-  
+
     var toBeInsertedData = {
       title: expenseTitle,
       cost: expenseCost.toFixed(2),
     };
-  
+
     let content = `
       <tr>
           <td>${toBeInsertedData.title}</td>
           <td>${toBeInsertedData.cost}</td>
       </tr>
     `;
-  
+
     transactionTableBody.innerHTML += content;
-  
+
     var currentExpense = parseFloat(totalExpense.textContent);
     totalExpense.textContent = (currentExpense + expenseCost).toFixed(2);
-  
+
     expenseTitleField.value = '';
     expenseCostField.value = '';
-  
+
     addExpenseModal.style.display = "none";
+
+    setBalance ();
   };
-  
 
   // for add income (trial1) update: not trial anymore bec it wokred hehe UwU
 
@@ -119,6 +115,8 @@
 
   IncomeEnterBtn.onclick = function () {
 
+    console.log('start');
+
     // nag make us another variable which is 'cost' and that 'cost's' value is: var cost = x (y.z), where z is a string
     var cost = parseFloat(incomeInputField.value);
 
@@ -127,6 +125,7 @@
     if (!isNaN(cost) && cost > 0) {
 
       // here we can see we made another variable to use sa next condition sa if else: var currentIncome = x (y.z), where z is another kind of value
+
       var currentIncome = parseFloat(totalIncome.textContent);
 
       totalIncome.textContent = (currentIncome + cost).toFixed(2);
@@ -135,6 +134,10 @@
     } else {
       alert("Fill input in first");
     }
+
+    setBalance ();
+
+    console.log('end');
   };
 
   incomeInputField.addEventListener("keydown", function (event) {
@@ -156,3 +159,17 @@
   // ang value. and that mag increase na dayn ang number ana
   // because of this code:
   // totalIncome.textContent = (currentIncome + cost)
+
+  // Total Balance
+  
+  var totalBalance = document.getElementById ("totalBalance");
+
+
+  // function setBalance () = global scope : everyone has access
+  function setBalance () {
+    let difference = parseFloat(totalIncome.textContent) - parseFloat(totalExpense.textContent); // <-- function scope
+
+    totalBalance.textContent = difference.toFixed(2);
+
+    console.log('test');
+  };
